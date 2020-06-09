@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <ng-container *ngIf="songName !== ''"> Playing: {{ songName }} </ng-container>
+  <ng-container *ngIf="songName === ''"> Select a Song </ng-container>
+
+  <span class="fill-remaining-space"></span>
+
+  <button mat-flat-button color="primary" (click)="toggleMusic()">
+    <mat-icon *ngIf="!playing">
+      play_arrow
+    </mat-icon>
+
+    <mat-icon *ngIf="playing">
+      pause
+    </mat-icon>
+  </button>
+</mat-toolbar>
