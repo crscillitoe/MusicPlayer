@@ -2,7 +2,15 @@
   <ng-container *ngIf="songName !== ''"> Playing: {{ songName }} </ng-container>
   <ng-container *ngIf="songName === ''"> Select a Song </ng-container>
 
-  <span class="fill-remaining-space"></span>
+  <mat-slider
+    thumbLabel
+    min="0"
+    max="100"
+    tickInterval="10"
+    [(ngModel)]="volume"
+    (ngModelChange)="updateVolume()"
+    class="fill-remaining-space"
+  ></mat-slider>
 
   <button mat-flat-button color="primary" (click)="toggleMusic()">
     <mat-icon *ngIf="!playing">

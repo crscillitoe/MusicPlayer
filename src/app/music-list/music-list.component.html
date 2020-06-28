@@ -1,0 +1,23 @@
+<div class="center-vertical">
+  <div class="center-horizontal">
+    <div class="buttons">
+      <div class="center-horizontal button" *ngFor="let song of musicList">
+        <button
+          mat-raised-button
+          color="primary"
+          class="song-list"
+          (click)="playSong(song)"
+          [disabled]="currentSong === song.displayName"
+        >
+          <ng-container *ngIf="currentSong === song.displayName">
+            <mat-icon>
+              play_arrow
+            </mat-icon>
+          </ng-container>
+
+          {{ song.displayName }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

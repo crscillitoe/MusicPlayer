@@ -19,9 +19,9 @@ export class MusicPlayerService {
   constructor() {
     let volume = localStorage.getItem('volume');
     if (volume) {
-      this.volume = parseInt(volume);
+      this.volume = parseFloat(volume);
     } else {
-      this.volume = 100;
+      this.volume = 1;
     }
   }
 
@@ -32,11 +32,12 @@ export class MusicPlayerService {
    * @param path Path to the song to load
    */
   loadSong(path: string, name: string): void {
+    this.pause();
     this.currentSong = new Howl({
       src: [path],
       autoplay: true,
       loop: true,
-      volume: this.volume,
+      volume: this.volume > 1 ? 1 : this.volume,
     });
 
     this._songName.next(name);
@@ -87,9 +88,9 @@ export class MusicPlayerService {
       return;
     }
 
-    this.volume = percent;
-    localStorage.setItem('volume', `${percent}`);
-    this.currentSong.volume(percent);
+    this.volume = percent / 100;
+    localStorage.setItem('volume', `${percent / 100}`);
+    this.currentSong.volume(percent / 100);
   }
 
   /**
