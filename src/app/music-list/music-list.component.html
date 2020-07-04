@@ -8,6 +8,7 @@
           class="song-list"
           (click)="playSong(song)"
           [disabled]="currentSong === song.displayName"
+          [ngClass]="{ shaking: currentSong === song.displayName }"
         >
           <ng-container *ngIf="currentSong === song.displayName">
             <mat-icon>
