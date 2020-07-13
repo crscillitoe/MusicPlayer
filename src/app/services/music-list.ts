@@ -21,5 +21,9 @@ export class MusicList {
       path: 'assets/Music/choss.wav',
       displayName: 'The Chess Grandmaster',
     },
+    {
+      path: 'assets/Music/Vibin_in_the_Rain.wav',
+      displayName: "Vibin' in the Rain",
+    },
   ];
 }
