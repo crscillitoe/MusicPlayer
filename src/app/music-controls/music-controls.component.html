@@ -1,18 +1,12 @@
 <mat-toolbar color="primary">
-  <mat-icon *ngIf="volume === 0">
-    volume_mute
-  </mat-icon>
+  <mat-icon *ngIf="volume === 0"> volume_mute </mat-icon>
 
-  <mat-icon *ngIf="volume <= 50 && volume > 0">
-    volume_down
-  </mat-icon>
+  <mat-icon *ngIf="volume <= 50 && volume > 0"> volume_down </mat-icon>
 
-  <mat-icon *ngIf="volume > 50">
-    volume_up
-  </mat-icon>
+  <mat-icon *ngIf="volume > 50"> volume_up </mat-icon>
 
   <mat-slider
-    style="width: 100px;"
+    style="width: 100px"
     thumbLabel
     min="0"
     max="100"
@@ -23,13 +17,21 @@
 
   <span class="fill-remaining-space"> </span>
 
-  <button mat-flat-button color="primary" (click)="toggleMusic()">
-    <mat-icon *ngIf="!playing">
-      play_arrow
-    </mat-icon>
+  <button
+    *ngIf="timeLeftMinutes != undefined"
+    mat-flat-button
+    color="primary"
+    [matBadge]="getBadge()"
+    matBadgeColor="accent"
+    (click)="add15()"
+    style="margin-right: 15px"
+  >
+    <mat-icon> timer </mat-icon>
+  </button>
 
-    <mat-icon *ngIf="playing">
-      pause
-    </mat-icon>
+  <button mat-flat-button color="primary" (click)="toggleMusic()">
+    <mat-icon *ngIf="!playing"> play_arrow </mat-icon>
+
+    <mat-icon *ngIf="playing"> pause </mat-icon>
   </button>
 </mat-toolbar>

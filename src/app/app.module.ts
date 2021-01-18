@@ -7,7 +7,8 @@ import { MusicControlsComponent } from './music-controls/music-controls.componen
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule, MatIcon } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { MatBadgeModule } from '@angular/material/badge';
 import { MusicListComponent } from './music-list/music-list.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     MatToolbarModule,
     MatButtonModule,
+    MatBadgeModule,
     MatSliderModule,
     MatIconModule,
   ],
