@@ -6,6 +6,10 @@ export interface Song {
 export class MusicList {
   static songs: Song[] = [
     {
+      path: 'assets/Music/RainyDay.wav',
+      displayName: 'Rainy Day',
+    },
+    {
       path: 'assets/Music/ChossBoss.wav',
       displayName: 'Social Interaction',
     },
